@@ -13,12 +13,12 @@ struct Animal_class{
 	void* super;
 	void (*toString) (void* this, char* buf, int bufSize);
 };
-// Struct to model our person class
+// Struct to model our animal class
 struct Animal {
 	struct Animal_class* class;
 	char* name;
 };
-// Person toString procedure
+// Animal toString procedure
 void Animal_toString (void* thisv, char* buf, int bufSize){
 	struct Animal* this = thisv;
 	snprintf(buf, bufSize, "name: %s", this->name);
