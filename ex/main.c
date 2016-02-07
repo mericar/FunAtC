@@ -40,6 +40,7 @@ int main(int argc, const char * argv[]) {
     }
     
     printf("does contain the number 1? %d\n", does_contain(1, sa1));
+
     
     SizedArray *sa2 = make_sized_array(10);
     for (int k=0; k < sa2->size; k++) {
@@ -50,11 +51,20 @@ int main(int argc, const char * argv[]) {
     printf("\n %d \n", entry[0].val );
     printf("\n %p \n", entry[1].key );
     printf("\n %d \n", entry[1].val );
-    printf("\n %p \n", entry[2].key );
-    printf("\n %d \n", entry[2].val );
+    printf("\n %p \n", entry[8].key );
+    printf("\n %d \n", entry[8].val );
     printf("\nkey: %p ... value: %d  \n\n", entry->key, entry->val);
     
+    printf("\n val at index 0 below should be zero: \n");
+    *(entry[0].key) = 17;
+    printf("\n new array composition: \n");
+    for (int k=0; k < sa2->size; k++) {
+        printf("\n %d \n", (sa2->array)[k]);
+    }
    
+    printf("does contain the number 17? %d\n", does_contain(17, sa2));
+    
     return 0;
 }
  
+
