@@ -1,4 +1,3 @@
-
 //
 //  main.c
 //  cplay
@@ -39,6 +38,23 @@ int main(int argc, const char * argv[]) {
     for (int k=0; k < sa1->size; k++) {
         push_int(k, &(sa1->array)[k]);
     }
+    
+    printf("does contain the number 1? %d\n", does_contain(1, sa1));
+    
+    SizedArray *sa2 = make_sized_array(10);
+    for (int k=0; k < sa2->size; k++) {
+        push_int(5, &(sa2->array)[k]);
+    }
+    DictEntry *entry = pull_all_int(5, sa2);
+    printf("\n %p \n", entry[0].key );
+    printf("\n %d \n", entry[0].val );
+    printf("\n %p \n", entry[1].key );
+    printf("\n %d \n", entry[1].val );
+    printf("\n %p \n", entry[2].key );
+    printf("\n %d \n", entry[2].val );
+    printf("\nkey: %p ... value: %d  \n\n", entry->key, entry->val);
+    
    
     return 0;
 }
+ 
