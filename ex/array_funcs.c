@@ -1,4 +1,3 @@
-
 //
 //  array_funcs.c
 //  cplay
@@ -22,22 +21,58 @@ SizedArray * make_sized_array(int size){
     return sa;
 }
 
+
+void push_dict_entry(DictEntry de, DictEntry *a){
+    *a = de;
+}
+
+
 void push_int(int a, int *b){
     printf("int to be replaced: %d\n", *b);
     *b = a;
     printf("int inserted: %d\n", *b);
 }
 
+
 // Returns true if given int is contained within the given array
-bool does_contain(int a, int *b){
+bool does_contain(int a, SizedArray *sa){
+    for (int k=0; k < sa->size; k++) {
+        if ((sa->array)[k] == a) {
+            return true;
+        }
+    }
     return false;
 }
 
 //  Takes an int as argument, returns a pointer to a new array
 //      containing a dictionary pointing to all values and their
 //      index in their extracted array.
-int* pull_all_int(int a, int *b);
+DictEntry* pull_all_int(int a, SizedArray *sa) {
+    
+    int count;
+    for (int k=0; k < sa->size; k++){
+        if ((sa->array)[k] == a) {
+            count++;
+        }
+    }
+    
+    DictEntry *dictionary = (DictEntry *) malloc(count * sizeof(DictEntry));
+    int incr = 0;
+    
+    for (int k=0; k < sa->size; k++){
+        if ((sa->array)[k] == a) {
+            DictEntry *de = malloc(sizeof(DictEntry));
+            de->key = &(sa->array)[k];
+            de->val = a;
+            push_dict_entry(*de, &dictionary[incr]);
+            incr++;
+        }
+    }
+    return dictionary;
+    
+}
 
 // Takes some index of an array and replaces the existing value with zero
 int* zero_index(int* a);
+
 
