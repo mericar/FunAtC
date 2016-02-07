@@ -43,7 +43,4 @@ bool does_contain(int a, SizedArray *sa);
 DictEntry* pull_all_int(int a, SizedArray *sa);
 
 // Takes some index of an array and replaces the existing value with zero
-int* zero_index(int* a);
-
-
-#endif /* array_funcs_h */
+void zero_index(int* a);
