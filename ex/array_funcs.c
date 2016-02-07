@@ -15,14 +15,14 @@
 
 
 SizedArray * make_sized_array(int size){
-    SizedArray *sa = malloc(sizeof(SizedArray));
+    SizedArray* sa = (SizedArray *) malloc(sizeof(SizedArray));
     sa->array = (int *) malloc(size * sizeof(int));
     sa->size = size;
     return sa;
 }
 
 
-void push_dict_entry(DictEntry de, DictEntry *a){
+void push_dict_entry(DictEntry de, DictEntry* a){
     *a = de;
 }
 
@@ -62,9 +62,9 @@ DictEntry* pull_all_int(int a, SizedArray *sa) {
     for (int k=0; k < sa->size; k++){
         if ((sa->array)[k] == a) {
             DictEntry *de = malloc(sizeof(DictEntry));
-            de->key = &(sa->array)[k];
+            de->key = &((sa->array)[k]);
             de->val = a;
-            push_dict_entry(*de, &dictionary[incr]);
+            push_dict_entry(*de, &(dictionary[incr]));
             incr++;
         }
     }
@@ -73,6 +73,8 @@ DictEntry* pull_all_int(int a, SizedArray *sa) {
 }
 
 // Takes some index of an array and replaces the existing value with zero
-int* zero_index(int* a);
-
+void zero_index(int* a){
+    *a = 0;
+    return;
+}
 
