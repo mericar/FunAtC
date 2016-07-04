@@ -38,7 +38,7 @@ struct Animal* new_Animal(char* name) {
 	return this;
 }
 
-struct Animal_class {
+struct Dog_class {
   struct Animal_class* super;
   void  (*toString) (void* this, char* buf, int bufSize);
 };
