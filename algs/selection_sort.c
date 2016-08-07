@@ -1,4 +1,5 @@
 #include <stdio.h>
+// COMPILATION NOTES: "gcc -std=gnu11", int types are declared and instantiated within the for loops.
 
 // Does a swap ... takes an int pointer i, and j.
 // creates a temporary variable t, stores the value pointed to by i.
@@ -23,7 +24,7 @@ void swap(int* i, int* j){
 // and GOTO LOOP above ^
 void selection_sort(int a[], int length){
 	int i,j;
-	for (int i = 0; i < length-1; i++){
+	for (i = 0; i < length-1; i++){
 		int min_index = i;
 		for (j = i+1; j <= length; j++){
 			if (a[j] < a[min_index]) {
@@ -42,20 +43,21 @@ int main() {
 	int nums[] = {10,3,4,5,2,1,9,8,7,6};
 	int len = 10;
 
+	printf("\n");
 	for (int i = 0; i < len; ++i){
 		printf("%d  ", nums[i]);
 	}
 
-	printf("\n");
-
+	printf("\n\n");
 	printf("%s\n", " before sort executes\n");
+	
 	selection_sort(nums, 9);
+	
 	printf("%s\n", " after sort executes\n");
 
 	for (int i = 0; i < len; ++i){
 		printf("%d  ", nums[i]);		
 	}
-
-	printf("\n");
+	printf("\n\n");
 }
 
