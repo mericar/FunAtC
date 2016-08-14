@@ -26,10 +26,17 @@ int main(){
 	//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 	int first_elem = 0;
-	int string_count = 100
+	int string_count = 100;
 	char** char_arr = make_char_array(string_count);
 	int sz = alloc_char_elem_size(char_arr, 100, first_elem);
 	char* fuzzy = "fuzzy wuzzy wasn't fuzzy, was he? ... ";
+	
+	// iterate over the char array, stop at the termination character.
+	int i = 0;
+	while(fuzzy[i] != '\0'){
+		printf("%c\n", fuzzy[i]);
+		++i;
+	}
 	add_text(char_arr, fuzzy, first_elem);
 	
 	printf("%c\n", char_arr[0][2] );
