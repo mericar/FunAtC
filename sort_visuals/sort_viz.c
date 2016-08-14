@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 //PURPOSE: Visualize sorting algs.
-
 // REQS: Use a 2D Array filled with chars to represent the size of the value to be sorted.
 //      y-axis is size of element, x is the element's position (larger, smaller)
 
