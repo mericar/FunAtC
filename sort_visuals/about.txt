@@ -1,0 +1,10 @@
+basic visualiser, selection sort compris!!!
+
+compile with:
+gcc -std=gnu11 -Wall sort_viz.c
+
+
+Enjoy ...
+
+
+
