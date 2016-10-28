@@ -103,7 +103,7 @@ void ray_of_ints_to_matrix_picture(struct ray* r){
 
 int main(){
     
-    int an_r[20] = {20,19,18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int an_r[20] = {20, 1, 18, 2, 16, 3, 15, 4, 13, 19, 5, 12, 6, 11, 10, 7, 17, 8, 9, 14};
     struct ray list_of_int;
     init_ray(20, &list_of_int);
     for (int k=0; k < list_of_int.length; k++) {
