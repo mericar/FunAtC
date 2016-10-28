@@ -6,4 +6,4 @@ I suggest the destiny of the two are bound, and the utility in comparing and con
 the two languages is helpful in better understanding the limits and use cases for procedural 
 and object-oriented programming.
 
-
+What's more, it is simply a little bit of fun ...
